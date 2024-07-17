@@ -16,14 +16,17 @@ public class PooApplication {
 		for (UFS ufs : UFS.values()) {
 			System.out.println(ufs.name() + " - " + ufs.getnome());
 		}
-		System.out.println("Digite UF pelo código");
-		String codigoUFS = scanner.next() .toUpperCase();
+		System.out.println("Digite UF que deseja  pelo código");
+		String codigoUFS = scanner.next().toUpperCase();
 
 		try {
 			UFS ufsEscolhida = UFS.valueOf(codigoUFS);
-			System.out.println("vc escolheu: " +ufsEscolhida.getnome());
-		} catch (IllegalArgumentException e){
-			System.out.println("Código de UF inválido");
+			System.out.println("vc escolheu: " + ufsEscolhida.getnome());
+			System.out.print("Digite o nome da região ");
+			String nomeRegiao = scanner.next();
+			Regiao.imprimirEstados(nomeRegiao);
+		} catch (IllegalArgumentException e) {
+			System.out.println("Código da UF inválido");
 		}
 		scanner.close();
 
